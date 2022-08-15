@@ -15,44 +15,20 @@ const tutorials = [
 //   return tutorials
 // }
 
-
 function titleCased () {
-  const seperateWords = tutorials.map((tutorials) => {return tutorials.toLowerCase().split(' ')});
-  console.log(seperateWords)
-  
-  for (let word of seperateWords) {
-    //console.log(word)
-   
-    const capitalizeWords = word.map(word => {
-    return word.charAt(0).toUpperCase() + word.slice(1);
-  })
-  console.log(capitalizeWords)
-  //return(capitalizeWords)
-  }
-  
-  }
-   
+const seperateWords = tutorials.map((tutorials) => {return tutorials.split(' ')});
+//console.log(seperateWords)
+
+ const Words = seperateWords.map(words => {
+   //console.log('words',words);
+   let arrayOfWords = words.map(word => {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+})
+ return(arrayOfWords.join(' '));
+ })
  
- // const initialValue = "";
+ return Words
  
-//    let stringSum = whatThis2.reduce(
-//   (previousValue, currentValue) => previousValue + currentValue + " ",
-//   initialValue
-// );
-  //return whatThis3
+
 }
-  // const stringSum = whatThis2.map((whatThis2) => whatThis2.join(" "));
-//console.log(whatThis2)
-
-// const initialValue = 0;
-// const sumWithInitial = whatThis2.reduce(
-//   (previousValue, currentValue) => previousValue + currentValue,
-//   initialValue
-// );
-
-//console.log(whatThis3);
-
-  
-}
-
-titleCased();
+console.log(titleCased());
